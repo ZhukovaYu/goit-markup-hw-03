@@ -5,29 +5,87 @@
     --accent-color: #2196F3;
     --secondary-text-color: #757575;
     --primary-white-color:#ffffff;
-
+    --background-dark-color: #2F303A;
+    --background-even-section: #F5F4FA;
+    --background-filter:#F5F4FA;
+    --button: #2196F3;
+    --active-button:#188CE8;
+    --primary-font:'Roboto',
+        sans-serif;
+    --secondary-font:'Raleway',
+        sans-serif;
 }
 
 body {
-    font-family: roboto, sans-serif;
+    font-family: var(--primary-font);
     color:var(--primary-text-color);
+    margin: 0;
 }
 
+button{
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+
+.list {
+    list-style: none;
+    margin: 0;
+}
+ h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding:0;
+ }
+
+/* containers*/
+.header-container{
+    width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1pt solid tomato;
+}
+.container{
+    width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 94pt;
+    padding-bottom: 94pt;
+    margin-left: auto;
+    margin-right: auto;
+    border:1px solid tomato;
+}
+.footer-container {
+    width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1pt solid tomato;
+}
 /* logo  */
 .logo-text-head {
     color: var(--primary-text-color);
     text-decoration: none;
-    font-family: Raleway;
+    font-family: var(--secondary-font);
     font-weight: 700;
     font-size: 26px;
     line-height: 1.2;
     letter-spacing: 0.03em;
 }
+
 .logo-part{
     color:var(--accent-color);
 }
 
-/* navigation */
+/* header navigation */
 .nav-link{
     text-decoration: none;
     color: var(--primary-text-color);
@@ -38,7 +96,7 @@ body {
 }
 .contacts-header {
     text-decoration: none;
-    color: #757575;
+    color: var(--secondary-text-color);
     font-weight: 500;
     font-size: 14px;
     line-height: 1.2;
@@ -49,35 +107,72 @@ body {
 .contacts-header:hover,
 .nav-link:focus,
 .contacts-header:focus {
-    color:var(--accent-color)
+    color:var(--accent-color);
 }
 
+/* hero */
 .hero-section {
-    background-color: #2F303A;
+    background-color: var(--background-dark-color);
+    text-align: center;
 }
 .hero {
-    color: #ffffff;
+    color: var(--primary-white-color);
     text-transform: uppercase;
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
-    text-align: center;
+    padding-top: 200px;
+    padding-left: 267px;
+    padding-right: 267px;
+    margin-bottom: 30px;  
 }
 
 .button {
-    font-family: inherit;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.88;
     letter-spacing: 0.06em;
+    text-align: center;
+    padding: 10pt 32pt;
+    min-width: 216px;
+    margin-bottom: 200pt;
+    background-color: var(--button);
+    color: var(--primary-white-color);
+    border: 1px solid transparent;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
+.button:focus, 
+.button:hover,
+.filter.focus,
+.filter:hover {
+    background-color: var(--active-button);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),  
+                0px 1px 2px rgba(0, 0, 0, 0.08), 
+                0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+/*sections*/
 .section-title {
     font-weight: 700;
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
     letter-spacing: 0.03em;
+    margin-bottom: 50px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
 .feature-title {
@@ -86,6 +181,7 @@ body {
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.03em;
+    margin-bottom: 10pt;
 }
 .feature-text {
     font-size: 14px;
@@ -94,11 +190,33 @@ body {
     color: var(--secondary-text-color);
 }
 
+.what-we-do{
+padding-top: 0;
+}
+
+.photo-persona{
+    margin-bottom: 30px;
+}
+
+.team {
+    background-color: var(--background-even-section);
+}
+.team-card{
+    box-shadow: 0px 1px 3px 
+                rgba(0, 0, 0, 0.12), 
+                0px 1px 1px
+                rgba(0, 0, 0, 0.14), 
+                0px 2px 1px 
+                rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+}
+
 .worker-name{
     font-weight: 500;
     line-height: 1.19;
     text-align: center;
     letter-spacing: 0.03em;
+    margin-bottom: 10pt;
 }
 
 .worker-job{
@@ -108,7 +226,23 @@ body {
     color: var(--secondary-text-color);
 }
 
-.filter{
+.work-name{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    margin: 0px 24px 4px 24px;
+}
+
+.work-type{
+    line-height: 1.88;
+    letter-spacing: 0.03em;
+    margin: 0px 24px 20px 24px;
+    color: var(--secondary-text-color);
+}
+
+/* Portfolio*/
+.filter {
     font-family: inherit;
     font-style: normal;
     font-weight: 500;
@@ -116,6 +250,10 @@ body {
     line-height: 1.62;
     text-align: center;
     letter-spacing: 0.03em;
+    padding: 6pt 22px 6px 22px;
+    margin-bottom: 50px;
+    border: none;
+    background-color: var(--background-filter);
 }
 
 .filter:hover,
@@ -123,48 +261,44 @@ body {
     background-color: var(--accent-color);
 }
 
-.work-name{
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 2;
-    letter-spacing: 0.06em;
+.work-sample-img {
+margin-bottom: 20px;
 }
 
-.work-type{
-    line-height: 1.88;
-    letter-spacing: 0.03em;
-    color: var(--secondary-text-color);
+.work-sample-card {
+    border: 1px solid #EEEEEE;
 }
 
+/*Footer*/
 footer {
-    background-color: #2F303A;
+    background-color: var(--background-dark-color);
 }
 
-.logo-text-foot {
+.logo-text-footer {
     color: var(--primary-white-color);
     text-decoration: none;
-    font-family: Raleway;
+    font-family: var(--secondary-font)
     font-weight: 700;
     font-size: 26px;
     line-height: 1.2;
     letter-spacing: 0.03em;
 }
 
-.contacts-foot{
+.contacts-footer {
     text-decoration: none;
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
-    color: rgba(255, 255, 255, 0.6)
+    color: rgba(255, 255, 255, 0.6);
    
 }
-.address-footer{
+.address-footer {
     text-decoration: none;
     font-style: normal;
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
-    color:#ffffff
+    color:var(--primary-white-color);
 }
 
 

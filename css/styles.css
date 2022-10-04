@@ -17,27 +17,36 @@
 }
 
 body {
+    margin: 0;
     font-family: var(--primary-font);
     color:var(--primary-text-color);
-    margin: 0;
+}
+
+img{
+    display: block;
 }
 
 button{
+    border-radius: 4px;
     font-family: inherit;
     cursor: pointer;
-    border-radius: 4px;
 }
 
-
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
 
 .list {
     list-style: none;
-    margin: 0;
+    text-decoration: none;
 }
+
  h1, h2, h3, p, ul, li {
-    margin: 0;
-    padding:0;
- }
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
 /* containers*/
 .header-container{
@@ -48,17 +57,21 @@ button{
     padding-bottom: 25px;
     margin-left: auto;
     margin-right: auto;
-    border: 1pt solid tomato;
 }
 .container{
+    display:box;
     width: 1200px;
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: 94pt;
-    padding-bottom: 94pt;
+    padding-top: 94px;
+    padding-bottom: 94px;
     margin-left: auto;
     margin-right: auto;
-    border:1px solid tomato;
+}
+
+.main-section,
+.hero-section {
+    border-top: 1px solid #ECECEC;
 }
 .footer-container {
     width: 1200px;
@@ -68,7 +81,6 @@ button{
     padding-bottom: 60px;
     margin-left: auto;
     margin-right: auto;
-    border: 1pt solid tomato;
 }
 /* logo  */
 .logo-text-head {
@@ -84,30 +96,52 @@ button{
 .logo-part{
     color:var(--accent-color);
 }
+.logo-text-head{
+    margin-right: 93px;
+}
 
 /* header navigation */
-.nav-link{
+.nav-link,
+.contacts-list,
+.contacts-header-link {
     text-decoration: none;
-    color: var(--primary-text-color);
     font-weight: 500;
     font-size:14px;
     line-height: 1.2;
     letter-spacing: 0.02em;
 }
-.contacts-header {
-    text-decoration: none;
+
+.nav-link,
+.contacts-list{
+    color: var(--primary-text-color);
+}
+
+.contacts-header-link {
     color: var(--secondary-text-color);
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
 }
 
 .nav-link:hover,
-.contacts-header:hover,
+.contacts-header-link:hover,
 .nav-link:focus,
-.contacts-header:focus {
+.contacts-header-link:focus {
     color:var(--accent-color);
+}
+
+.nav-item:not(:last-child),
+.contacts-header-item:not(:last-child) {
+    margin-right: 50px;
+}
+
+.head-nav,
+.main-nav-list,
+.contacts-list,
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+.contacts-list{
+    margin-left: auto;
 }
 
 /* hero */
@@ -133,9 +167,9 @@ button{
     line-height: 1.88;
     letter-spacing: 0.06em;
     text-align: center;
-    padding: 10pt 32pt;
+    padding: 10px 32px;
     min-width: 216px;
-    margin-bottom: 200pt;
+    margin-bottom: 200px;
     background-color: var(--button);
     color: var(--primary-white-color);
     border: 1px solid transparent;
@@ -174,14 +208,20 @@ button{
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
+.features-list{
+    display: flex;
+}
+.features-list-item:not(:last-child){
+    margin-right: 30px;
+}
 
 .feature-title {
+    margin-bottom: 10px;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.03em;
-    margin-bottom: 10pt;
 }
 .feature-text {
     font-size: 14px;
@@ -192,6 +232,17 @@ button{
 
 .what-we-do{
 padding-top: 0;
+}
+
+.what-we-do-img,
+.team-cards-list {
+    display:flex;
+    justify-content: space-around;
+}
+
+.what-we-do-img-item:not(:last-child),
+.team-card:not(:last-child) {
+    margin-right: 30px;
 }
 
 .photo-persona{
@@ -212,37 +263,26 @@ padding-top: 0;
 }
 
 .worker-name{
+    margin-bottom: 10px;
     font-weight: 500;
     line-height: 1.19;
     text-align: center;
     letter-spacing: 0.03em;
-    margin-bottom: 10pt;
 }
 
 .worker-job{
+    margin-bottom: 30px;
     line-height: 1.19;
     text-align: center;
     letter-spacing: 0.03em;
-    color: var(--secondary-text-color);
-}
-
-.work-name{
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 2;
-    letter-spacing: 0.06em;
-    margin: 0px 24px 4px 24px;
-}
-
-.work-type{
-    line-height: 1.88;
-    letter-spacing: 0.03em;
-    margin: 0px 24px 20px 24px;
     color: var(--secondary-text-color);
 }
 
 /* Portfolio*/
 .filter {
+    padding: 6px 22px 6px 22px;
+    margin-bottom: 50px;
+    border: none;
     font-family: inherit;
     font-style: normal;
     font-weight: 500;
@@ -250,9 +290,6 @@ padding-top: 0;
     line-height: 1.62;
     text-align: center;
     letter-spacing: 0.03em;
-    padding: 6pt 22px 6px 22px;
-    margin-bottom: 50px;
-    border: none;
     background-color: var(--background-filter);
 }
 
@@ -261,12 +298,45 @@ padding-top: 0;
     background-color: var(--accent-color);
 }
 
-.work-sample-img {
-margin-bottom: 20px;
+.filters-list{
+    display: flex;
+    justify-content: center;
 }
 
-.work-sample-card {
-    border: 1px solid #EEEEEE;
+.filter-list-item:not(:last-child){
+    margin-right: 8px;
+}
+
+/*.work-sample-card:not(:last-child) {
+    margin-right: 30px;
+}*/
+
+.work-sample-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.work-sample-card-naming {
+    border-bottom: 1px solid #EEEEEE;
+    border-left: 1px solid #EEEEEE;
+    border-right: 1px solid #EEEEEE;
+    padding-top: 20px;
+}
+
+.work-name {
+    margin: 0px 24px 4px 24px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+}
+
+.work-type {
+    margin: 0px 24px 20px 24px;
+    line-height: 1.88;
+    letter-spacing: 0.03em;
+    color: var(--secondary-text-color);
 }
 
 /*Footer*/
@@ -277,7 +347,7 @@ footer {
 .logo-text-footer {
     color: var(--primary-white-color);
     text-decoration: none;
-    font-family: var(--secondary-font)
+    font-family: var(--secondary-font);
     font-weight: 700;
     font-size: 26px;
     line-height: 1.2;
@@ -286,12 +356,13 @@ footer {
 
 .contacts-footer {
     text-decoration: none;
+    font-style: normal;
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
     color: rgba(255, 255, 255, 0.6);
-   
 }
+
 .address-footer {
     text-decoration: none;
     font-style: normal;

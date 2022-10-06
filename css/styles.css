@@ -266,6 +266,7 @@ padding-bottom: 94px;
     line-height: 1.19;
     text-align: center;
     letter-spacing: 0.03em;
+    margin-bottom: 10px;
 }
 
 .worker-job{
@@ -274,8 +275,7 @@ padding-bottom: 94px;
     letter-spacing: 0.03em;
     color: var(--secondary-text-color);
 }
-.persona-name,
-.job-title {
+.team-card-text {
     padding:30px;
     padding-bottom:30px;
 }

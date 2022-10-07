@@ -53,6 +53,8 @@ ul, ol {
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 header {
@@ -118,8 +120,8 @@ header {
     align-items: center;
 }
 
-.section-works{
-    border-top: 1px solid #ECECEC;
+header {
+    border-bottom: 1px solid #ECECEC;
 }
 
 .contacts-list{
@@ -248,7 +250,7 @@ padding-bottom: 94px;
 .team {
     background-color: var(--background-even-section);
     padding-top: 94px;
-    padding: 94px;
+    padding-bottom: 94px;
 }
 
 .team-card{
@@ -277,7 +279,6 @@ padding-bottom: 94px;
 }
 .team-card-text {
     padding:30px;
-    padding-bottom:30px;
 }
 
 /* Portfolio*/
@@ -378,6 +379,6 @@ footer {
     color: rgba(255, 255, 255, 0.6);
 }
 
-.contacts-footer-item:not(:last-child) {
+.address-list-item:not(:last-child) {
     margin-bottom: 9px;
 }
